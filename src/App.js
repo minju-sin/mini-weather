@@ -3,10 +3,12 @@ import axios from 'axios';
 
 function App() {
     const [responseData, setResponseData] = useState(null);
+    const url = process.env.REACT_APP_URL;
+    const apiKey = process.env.REACT_APP_API_KEY;
 
     useEffect(() => {
         axios({
-            url: 'https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=frsul9P4k6JRh5KhBW7JnnXO62LosvNYKYeYUfUEsemFmlcCKbH7Mc1RBvQpng5mtqtshXm7rXv0pJnhk0aI7A%3D%3D&pageNo=2&numOfRows=10&dataType=JSON&base_date=20240202&base_time=0500&nx=55&ny=127', // 통신할 웹문서
+            url: `${url}?serviceKey=${apiKey}&pageNo=1&numOfRows=1000&dataType=JSON&base_date=20240202&base_time=0500&nx=55&ny=127`, 
           method: 'get',
         })
           .then((response) => {
