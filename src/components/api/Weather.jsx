@@ -1,62 +1,63 @@
+// Weather.jsx
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { getFormattedDate } from './dateUtils'; 
 
 function Weather() {
-    const [responseData, setResponseData] = useState(null);
-    const [nx, setNx] = useState('');
-    const [ny, setNy] = useState('');
-    const url = process.env.REACT_APP_URL;
-    const apiKey = process.env.REACT_APP_API_KEY;
+  const [responseData, setResponseData] = useState(null); // 요청 받은 값을 useState 변수로 받아옴 
 
-    // 현재 날짜를 'YYYYMMDD' 형식으로 얻기
-    const currentDate = new Date();
-    const year = currentDate.getFullYear();
-    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // 월은 0부터 시작하므로 1을 더하고 두 자리로 패딩
-    const day = String(currentDate.getDate()).padStart(2, '0'); // 일을 두 자리로 패딩
-    const baseDate = `${year}${month}${day}`;
+  const url = process.env.REACT_APP_URL; // get 요청 받을 api 
+  const apiKey = process.env.REACT_APP_API_KEY; // service Key
+  const baseDate = getFormattedDate(); // 현재날짜 (년월일)
 
-    useEffect(() => {
-        axios({
-            url: `${url}?serviceKey=${apiKey}&pageNo=1&numOfRows=1&dataType=JSON&base_date=${baseDate}&base_time=0500&nx=${nx}&ny=${ny}`, 
-          method: 'get',
-        })
-          .then((response) => {
-            // axios 요청 성공 -> 요청 결과값이 response.data에 저장됨 
-            setResponseData(response.data);
-          })
-          .catch((error) => {
-            // 오류 발생하면 error 메시지 화면에 보여줌 
-            console.error('Error fetching data:', error);
-          });
-    }, [nx, ny]);
-    
-    const handleNxChange = (e) => {
-      setNx(e.target.value);
+  useEffect(() => {
+    // axios를 통한 get 요청 
+    axios({
+      url: `${url}?serviceKey=${apiKey}&pageNo=1&numOfRows=1000&dataType=JSON&base_date=${baseDate}&base_time=0500&nx=55&ny=127`,
+      method: 'get',
+    })
+      //  response(결과)가 성공적으로 끝났을 때 실행됨 
+      .then((response) => {
+        const categorizedData = categorizeByCategory(response.data);
+        setResponseData(categorizedData);
+      })
+      // 에러 발생 시 실행 됨 
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, [baseDate]);
+
+  // 카테고리에 따라 데이터 분류 
+  const categorizeByCategory = (data) => {
+    const categorizedData = {};
+    data.response.body.items.item.forEach((item) => {
+      const category = item.category;
+
+      if (!categorizedData[category]) {
+        categorizedData[category] = [];
+      }
+
+      categorizedData[category].push(item);
+    });
+
+    return categorizedData;
   };
 
-  const handleNyChange = (e) => {
-      setNy(e.target.value);
-  };
-
-    return (
-        <div>
-            <div>
-                <label htmlFor="nx">nx: </label>
-                <input type="text" id="nx" value={nx} onChange={handleNxChange} />
-            </div>
-            <div>
-                <label htmlFor="ny">ny: </label>
-                <input type="text" id="ny" value={ny} onChange={handleNyChange} />
-            </div>
-            {responseData ? (
-                // 결과를 화면에 보여줌 
-                <pre>{JSON.stringify(responseData, null, 2)}</pre>
-            ) : (
-                // 로딩중일 때 보여줌 
-                <p>로딩 중...</p>
-            )}
-        </div>
-      );
-    }
+  return (
+    <div>
+      {responseData ? (
+        // 데이터가 있으면 아래 내용 출력 
+        Object.keys(responseData).map((category) => (
+          <div key={category}>
+            <h2>{category}</h2>
+            <pre>{JSON.stringify(responseData[category], null, 2)}</pre>
+          </div>
+        ))
+      ) : (
+        <p>로딩 중...</p>
+      )}
+    </div>
+  );
+}
 
 export default Weather;
