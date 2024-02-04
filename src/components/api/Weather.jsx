@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { getCurrentDate } from './dateUtils';
+import { getCurrentTime } from './timeUtils';
 
 function Weather() {
     const [responseData, setResponseData] = useState(null); // 요청 결과
@@ -14,7 +15,7 @@ function Weather() {
     const baseDate = getCurrentDate();
 
     // 현재 시간 얻기 
-    const baseTime = '0500';
+    const baseTime = getCurrentTime();
 
     const fetchData = async() => {
       setLoding(true);
@@ -31,7 +32,6 @@ function Weather() {
             ny: 127
           }
         });
-
         setResponseData(response.data);
       }catch(error) {
         setError(error);
