@@ -55,6 +55,6 @@ function Weather() {
           <pre>{JSON.stringify(responseData, null, 2)}</pre>
       </div>
     );
-  }
+}
 
 export default Weather;
