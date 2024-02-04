@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { getCurrentDate } from './dateUtils';
 import { getCurrentTime } from './timeUtils';
+import { getGeoLocation } from './geoLocation';
 
 function Weather() {
     const [responseData, setResponseData] = useState(null); // 요청 결과
@@ -13,13 +14,15 @@ function Weather() {
 
     // 현재 날짜를 'YYYYMMDD' 형식으로 얻기 
     const baseDate = getCurrentDate();
-
     // 현재 시간 얻기 
     const baseTime = getCurrentTime();
 
     const fetchData = async() => {
       setLoding(true);
       try{
+        // GPS로 현재위치를 받아와 위경도 좌표를 기상청 격자로 바꾸는 함수
+        const lccCoordinates = await getGeoLocation();
+
         const response = await axios.get(URL, {
           params:{
             serviceKey: apiKey,
@@ -28,8 +31,8 @@ function Weather() {
             dataType: 'JSON',
             base_date: baseDate,
             base_time: baseTime,
-            nx: 55,
-            ny: 127
+            nx: lccCoordinates.x,
+            ny: lccCoordinates.y
           }
         });
         setResponseData(response.data);
