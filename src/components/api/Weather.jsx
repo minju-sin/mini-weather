@@ -8,6 +8,7 @@ import SKYComponent from './category/component/SKYComponent';
 import PHYComponent from './category/component/PTYComponent';
 import PCPComponent from './category/component/PCPComponent';
 import SNOComponent from './category/component/SNOComponent';
+import { Wrapper } from './category/style/TmpStyle';
 
 
 
@@ -58,13 +59,13 @@ function Weather() {
     if(!responseData) return null;
 
     return (
-      <div>
+      <Wrapper>
         <TMPComponent responseData={responseData} />
         <SKYComponent responseData={responseData} />
         <PHYComponent responseData={responseData} />
         <PCPComponent responseData={responseData} />
         <SNOComponent responseData={responseData} />
-      </div>
+      </Wrapper>
       
     );
 }

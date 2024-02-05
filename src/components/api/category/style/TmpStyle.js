@@ -22,3 +22,9 @@ export const StyledTitie = styled.div`
   font-weight: bold;
   padding: 8px;
 `;
+
+export const Wrapper = styled.div`
+  width: 800px;
+  margin: 300px 500px auto;
+  overflow: auto;  
+`;
