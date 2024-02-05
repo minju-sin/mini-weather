@@ -1,19 +1,7 @@
 import React from 'react'
 import { filterDataByCategory } from '../DataUtils';
-import styled from 'styled-components';
+import {FlexContainer, StyledDiv} from '../style/TmpStyle.js';
 
-const FlexContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-const StyledDiv = styled.div`
-  flex: 1;
-  min-width: 100px; /* Set your desired width here */
-  text-align: center;
-  border: 1px solid #ddd;
-  padding: 8px;
-`;
 
 // 1시간 강수량 
 /*
