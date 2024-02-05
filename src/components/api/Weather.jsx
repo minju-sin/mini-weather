@@ -7,7 +7,7 @@ import TMPComponent from './category/component/TMPComponent';
 import PHYComponent from './category/component/PTYComponent';
 import PCPComponent from './category/component/PCPComponent';
 import WSDComponent from './category/component/WSDComponent';
-import { CurrentLocation, Degree, TMNX, Wrapper, StyledTitie } from './category/style/TmpStyle';
+import { CurrentLocation, Degree, TMNX, Wrapper, StyledTitie, FlexContainer } from './category/style/TmpStyle';
 import TimeComponent from './category/component/TimeComponent';
 import DegreeComponenet from './category/component/DegreeComponent';
 import TMNComponent from './category/component/TMNComponent';
@@ -77,25 +77,31 @@ function Weather() {
         </TMNX>
 
 
-        <div>
-          <StyledTitie>오늘</StyledTitie>
-          <StyledTitie>강수상태</StyledTitie>
-          <StyledTitie>기온</StyledTitie>
-          <StyledTitie>강수확률(%)</StyledTitie>
-          <StyledTitie>강수량(mm)</StyledTitie>
-          <StyledTitie>바람(m/s)</StyledTitie>
-          <StyledTitie>습도(%)</StyledTitie>
-        </div>
-
         <Wrapper>
-          <TimeComponent responseData={responseData} />
-          <PHYComponent responseData={responseData} />
-          <TMPComponent responseData={responseData} />
-          <POPComponent responseData={responseData} />
-          <PCPComponent responseData={responseData} />
-          <WSDComponent responseData={responseData} />
-          <REHComponent responseData={responseData} />
+          
         </Wrapper>
+
+        <div>
+          <div>
+            <StyledTitie>오늘</StyledTitie>
+            <StyledTitie>강수상태</StyledTitie>
+            <StyledTitie>기온</StyledTitie>
+            <StyledTitie>강수확률(%)</StyledTitie>
+            <StyledTitie>강수량(mm)</StyledTitie>
+            <StyledTitie>바람(m/s)</StyledTitie>
+            <StyledTitie>습도(%)</StyledTitie>
+          </div>
+
+          <Wrapper>
+            <TimeComponent responseData={responseData} />
+            <PHYComponent responseData={responseData} />
+            <TMPComponent responseData={responseData} />
+            <POPComponent responseData={responseData} />
+            <PCPComponent responseData={responseData} />
+            <WSDComponent responseData={responseData} />
+            <REHComponent responseData={responseData} />
+        </Wrapper>
+        </div>
       </div>
     );
 }
