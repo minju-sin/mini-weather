@@ -28,11 +28,16 @@ function PCPComponent({responseData}) {
 
   return (
     <div>
-        <ul>
-        {pcpData.map((item, index) => (
-          <li key={index}>{`강수량: ${getPcpConditionText(item.fcstValue)}, 시간: ${item.fcstTime}`}</li>
-        ))}
-        </ul>
+        <table>
+            <tbody>
+            <tr>
+                <td>강수량</td>
+                {pcpData.map((item, index) => (
+                <td key={index}>{`${getPcpConditionText(item.fcstValue)}`}</td>
+                ))}
+            </tr>
+            </tbody>
+        </table>
     </div>
   )
 }

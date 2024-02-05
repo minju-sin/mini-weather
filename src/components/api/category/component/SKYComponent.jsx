@@ -26,11 +26,16 @@ function SKYComponent({responseData}) {
 
   return (
     <div>
-       <ul>
-        {skyData.map((item, index) => (
-          <li key={index}>{`하늘상태: ${getSkyConditionText(item.fcstValue)}, 시간: ${item.fcstTime}`}</li>
-        ))}
-      </ul>
+      <table>
+        <tbody>
+          <tr>
+            <td>하늘 상태</td>
+            {skyData.map((item, index) => (
+              <td key={index}>{`${getSkyConditionText(item.fcstValue)}`}</td>
+            ))}
+          </tr>
+        </tbody>
+      </table>
     </div>
   )
 }

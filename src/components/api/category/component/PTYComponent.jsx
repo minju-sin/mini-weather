@@ -28,11 +28,16 @@ function PHYComponent({responseData}) {
 
   return (
     <div>
-        <ul>
-        {ptyData.map((item, index) => (
-          <li key={index}>{`강수형태: ${getPhyConditionText(item.fcstValue)}, 시간: ${item.fcstTime}`}</li>
-        ))}
-        </ul>
+        <table>
+            <tbody>
+            <tr>
+                <td>강수형태</td>
+                {ptyData.map((item, index) => (
+                <td key={index}>{`${getPhyConditionText(item.fcstValue)}`}</td>
+                ))}
+            </tr>
+            </tbody>
+        </table>
     </div>
   )
 }
