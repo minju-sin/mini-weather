@@ -11,7 +11,7 @@ function TMXComponent({responseData}) {
     return (
       <div>
         {/* 가장 큰 최고 기온만을 표시 */}
-          <div>{maxTmnData.fcstValue}℃</div>
+          <p>{maxTmnData.fcstValue}℃</p>
       </div>
       
     )

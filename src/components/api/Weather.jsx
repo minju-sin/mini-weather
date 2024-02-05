@@ -8,7 +8,7 @@ import SKYComponent from './category/component/SKYComponent';
 import PHYComponent from './category/component/PTYComponent';
 import PCPComponent from './category/component/PCPComponent';
 import SNOComponent from './category/component/SNOComponent';
-import { CurrentLocation, Degree, Wrapper } from './category/style/TmpStyle';
+import { CurrentLocation, Degree, TMNX, Wrapper } from './category/style/TmpStyle';
 import TimeComponent from './category/component/TimeComponent';
 import DegreeComponenet from './category/component/DegreeComponent';
 import TMNComponent from './category/component/TMNComponent';
@@ -69,8 +69,12 @@ function Weather() {
           <DegreeComponenet responseData={responseData} />
         </Degree>
 
-        <p>최저기온 <TMNComponent responseData={responseData} /></p>
-        <p>최고기온 <TMXComponent responseData={responseData} /></p>
+        <TMNX>
+          최저/최고
+          <TMNComponent responseData={responseData} />
+          <TMXComponent responseData={responseData} />
+        </TMNX>
+
         <Wrapper>
           <TimeComponent responseData={responseData} />
           <TMPComponent responseData={responseData} />

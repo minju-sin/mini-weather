@@ -45,12 +45,25 @@ export const CurrentLocation = styled.p`
 // 현재 온도 
 export const Degree = styled.p`
   color: var(--systemGrey-900, #212121);
-text-align: center;
-font-family: Inter;
-font-size: 56px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-letter-spacing: 0.2px;
-text-transform: capitalize;
+  text-align: center;
+  font-family: Inter;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+`;
+
+// 최저.최고기온 
+export const TMNX = styled.p`
+  color: var(--systemGrey-900, #212121);
+  text-align: center;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
 `;

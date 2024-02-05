@@ -12,7 +12,7 @@ function TMNComponent({ responseData }) {
   return (
     <div>
       {/* 가장 작은 최저 기온만을 표시 */}
-      <div>{minTmnData.fcstValue}℃</div>
+      <p>{minTmnData.fcstValue}℃</p>
     </div>
   );
 }
