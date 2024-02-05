@@ -1,6 +1,6 @@
 import React from 'react'
 import { filterDataByCategory } from '../DataUtils';
-import {FlexContainer, StyledDiv} from '../style/TmpStyle.js';
+import {FlexContainer, StyledDiv, StyledTitie} from '../style/TmpStyle.js';
 
 
 
@@ -31,6 +31,7 @@ function PTYComponent({responseData}) {
 
     return (
         <FlexContainer>
+            <StyledTitie>강수형태</StyledTitie>
             {ptyData.map((item, index) => (
                 <StyledDiv key={index}>{`${getPhyConditionText(item.fcstValue)}`}</StyledDiv>
             ))}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { filterDataByCategory } from '../DataUtils';
-import {FlexContainer, StyledDiv} from '../style/TmpStyle.js';
+import {FlexContainer, StyledDiv, StyledTitie} from '../style/TmpStyle.js';
 
 
 // 적설량
@@ -20,6 +20,9 @@ function SNOComponent({ responseData }) {
 
   return (
     <FlexContainer>
+      <StyledTitie>
+        적설량(cm)
+      </StyledTitie>
         {snoData.map((item, index) => (
             <StyledDiv key={index}>{`${getSnoConditionText(item.fcstValue)}`}</StyledDiv>
         ))}

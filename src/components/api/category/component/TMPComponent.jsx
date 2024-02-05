@@ -1,6 +1,6 @@
 import React from 'react';
 import { filterDataByCategory } from '../DataUtils';
-import {FlexContainer, StyledDiv} from '../style/TmpStyle.js';
+import {FlexContainer, StyledDiv, StyledTitie} from '../style/TmpStyle.js';
 
 
 // 1시간기온 
@@ -9,6 +9,9 @@ function TMPComponent({responseData}) {
 
   return (
     <FlexContainer>
+      <StyledTitie>
+        기온(℃)
+      </StyledTitie>
         {tmpData.map((item, index) => (
             <StyledDiv key={index}>{item.fcstValue}℃</StyledDiv>
         ))}

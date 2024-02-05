@@ -1,6 +1,6 @@
 import React from 'react';
 import { filterDataByCategory } from '../DataUtils';
-import {FlexContainer, StyledDiv} from '../style/TmpStyle.js';
+import {FlexContainer, StyledDiv, StyledTitie} from '../style/TmpStyle.js';
 
 // 하늘상태 
 /*
@@ -27,6 +27,7 @@ function SKYComponent({responseData}) {
 
     return (
       <FlexContainer>
+        <StyledTitie>하늘상태</StyledTitie>
           {skyData.map((item, index) => (
               <StyledDiv key={index}>{`${getSkyConditionText(item.fcstValue)}`}</StyledDiv>
           ))}
