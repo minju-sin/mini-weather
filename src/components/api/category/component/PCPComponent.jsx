@@ -7,6 +7,14 @@ const FlexContainer = styled.div`
   flex-direction: row;
 `;
 
+const StyledDiv = styled.div`
+  flex: 1;
+  min-width: 100px; /* Set your desired width here */
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 8px;
+`;
+
 // 1시간 강수량 
 /*
         범주                        표시
@@ -35,7 +43,7 @@ function PCPComponent({responseData}) {
     return (
         <FlexContainer>
             {pcpData.map((item, index) => (
-                <div key={index}>{`${getPcpConditionText(item.fcstValue)}`}</div>
+                <StyledDiv key={index}>{`${getPcpConditionText(item.fcstValue)}`}</StyledDiv>
             ))}
         </FlexContainer>
         

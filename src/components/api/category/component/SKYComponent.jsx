@@ -6,6 +6,15 @@ const FlexContainer = styled.div`
   display: flex;
   flex-direction: row;
 `;
+
+const StyledDiv = styled.div`
+  flex: 1;
+  min-width: 100px; /* Set your desired width here */
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 8px;
+`;
+
 // 하늘상태 
 /*
   맑음 : 1 
@@ -32,7 +41,7 @@ function SKYComponent({responseData}) {
     return (
       <FlexContainer>
           {skyData.map((item, index) => (
-              <div key={index}>{`${getSkyConditionText(item.fcstValue)}`}</div>
+              <StyledDiv key={index}>{`${getSkyConditionText(item.fcstValue)}`}</StyledDiv>
           ))}
       </FlexContainer>
       

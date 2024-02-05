@@ -7,6 +7,14 @@ const FlexContainer = styled.div`
   flex-direction: row;
 `;
 
+const StyledDiv = styled.div`
+  flex: 1;
+  min-width: 100px; /* Set your desired width here */
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 8px;
+`;
+
 // 1시간기온 
 function TMPComponent({responseData}) {
     const tmpData = filterDataByCategory(responseData, 'TMP');
@@ -14,7 +22,7 @@ function TMPComponent({responseData}) {
   return (
     <FlexContainer>
         {tmpData.map((item, index) => (
-            <div key={index}>{item.fcstValue}℃</div>
+            <StyledDiv key={index}>{item.fcstValue}℃</StyledDiv>
         ))}
     </FlexContainer>
     

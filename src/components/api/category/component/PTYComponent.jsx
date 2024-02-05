@@ -7,6 +7,15 @@ const FlexContainer = styled.div`
   flex-direction: row;
 `;
 
+const StyledDiv = styled.div`
+  flex: 1;
+  min-width: 100px; /* Set your desired width here */
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 8px;
+`;
+
+
 // 강수형태
 /*
     없음 : 0    비 : 1     비/눈 : 2
@@ -35,7 +44,7 @@ function PTYComponent({responseData}) {
     return (
         <FlexContainer>
             {ptyData.map((item, index) => (
-                <div key={index}>{`${getPhyConditionText(item.fcstValue)}`}</div>
+                <StyledDiv key={index}>{`${getPhyConditionText(item.fcstValue)}`}</StyledDiv>
             ))}
         </FlexContainer>
         
