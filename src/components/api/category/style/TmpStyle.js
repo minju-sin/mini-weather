@@ -25,6 +25,32 @@ export const StyledTitie = styled.div`
 
 export const Wrapper = styled.div`
   width: 800px;
-  margin: 300px 500px auto;
+  margin: 0 auto;
   overflow: auto;  
+`;
+
+// 현재위치
+export const CurrentLocation = styled.p`
+  color: #757575;
+  text-align: center;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  text-transform: capitalize; 
+`;
+
+// 현재 온도 
+export const Degree = styled.p`
+  color: var(--systemGrey-900, #212121);
+text-align: center;
+font-family: Inter;
+font-size: 56px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 0.2px;
+text-transform: capitalize;
 `;

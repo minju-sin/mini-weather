@@ -8,8 +8,9 @@ import SKYComponent from './category/component/SKYComponent';
 import PHYComponent from './category/component/PTYComponent';
 import PCPComponent from './category/component/PCPComponent';
 import SNOComponent from './category/component/SNOComponent';
-import { Wrapper } from './category/style/TmpStyle';
+import { CurrentLocation, Degree, Wrapper } from './category/style/TmpStyle';
 import TimeComponent from './category/component/TimeComponent';
+import DegreeComponenet from './category/component/DegreeComponent';
 
 
 
@@ -60,15 +61,20 @@ function Weather() {
     if(!responseData) return null;
 
     return (
-      <Wrapper>
-        <TimeComponent responseData={responseData} />
-        <TMPComponent responseData={responseData} />
-        <SKYComponent responseData={responseData} />
-        <PHYComponent responseData={responseData} />
-        <PCPComponent responseData={responseData} />
-        <SNOComponent responseData={responseData} />
-      </Wrapper>
-      
+      <div>
+        <CurrentLocation>현재 위치</CurrentLocation>
+        <Degree>
+          <DegreeComponenet responseData={responseData} />
+        </Degree>
+        <Wrapper>
+          <TimeComponent responseData={responseData} />
+          <TMPComponent responseData={responseData} />
+          <SKYComponent responseData={responseData} />
+          <PHYComponent responseData={responseData} />
+          <PCPComponent responseData={responseData} />
+          <SNOComponent responseData={responseData} />
+        </Wrapper>
+      </div>
     );
 }
 
