@@ -8,8 +8,8 @@ export const FlexContainer = styled.div`
 
 export const StyledDiv = styled.div`
   flex: 1;
-  min-width: 100px; /* Set your desired width here */
+  min-width: 70px; 
   text-align: center;
-  border: 1px solid #ddd;
+  border-right: 1px solid #ddd; /* 세로선만 표시되도록 수정 */
   padding: 8px;
 `;

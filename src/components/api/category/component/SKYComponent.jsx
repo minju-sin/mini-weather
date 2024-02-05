@@ -2,7 +2,6 @@ import React from 'react';
 import { filterDataByCategory } from '../DataUtils';
 import {FlexContainer, StyledDiv} from '../style/TmpStyle.js';
 
-
 // 하늘상태 
 /*
   맑음 : 1 
@@ -16,11 +15,11 @@ function SKYComponent({responseData}) {
     const getSkyConditionText = (code) => {
       switch (code) {
         case '1':
-          return '맑음';
+          return '☀️';
         case '3':
-          return '구름많음';
+          return '⛅';
         case '4':
-          return '흐림';
+          return '☁️';
         default:
           return '알 수 없음';
       }

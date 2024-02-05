@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
 import { getCurrentDate } from './dateUtils';
 import { getCurrentTime } from './timeUtils';
 import { getGeoLocation } from './geoLocation';

@@ -17,13 +17,13 @@ function PTYComponent({responseData}) {
             case '0':
                 return '없음';
             case '1':
-                return '비';
+                return '🌧️';
             case '2':
-                return '비/눈';
+                return '🌧️/❄️';
             case '3':
-                return '눈';
+                return '❄️';
             case '4':
-                return '소나기';
+                return '🌦️';
             default:
                 return '알수없음';
         }
