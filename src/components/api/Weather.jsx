@@ -7,6 +7,7 @@ import TMPComponent from './category/component/TMPComponent';
 import SKYComponent from './category/component/SKYComponent';
 import PHYComponent from './category/component/PTYComponent';
 import PCPComponent from './category/component/PCPComponent';
+import SNOComponent from './category/component/SNOComponent';
 
 function Weather() {
     const [responseData, setResponseData] = useState(null); // 요청 결과
@@ -60,6 +61,7 @@ function Weather() {
         <SKYComponent responseData={responseData} />
         <PHYComponent responseData={responseData} />
         <PCPComponent responseData={responseData} />
+        <SNOComponent responseData={responseData} />
       </div>
     );
 }
