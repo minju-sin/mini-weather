@@ -5,6 +5,7 @@ import { getCurrentTime } from './timeUtils';
 import { getGeoLocation } from './geoLocation';
 import TMPComponent from './category/component/TMPComponent';
 import SKYComponent from './category/component/SKYComponent';
+import PHYComponent from './category/component/PTYComponent';
 
 function Weather() {
     const [responseData, setResponseData] = useState(null); // 요청 결과
@@ -56,6 +57,7 @@ function Weather() {
       <div>
         <TMPComponent responseData={responseData} />
         <SKYComponent responseData={responseData} />
+        <PHYComponent responseData={responseData} />
       </div>
     );
 }
