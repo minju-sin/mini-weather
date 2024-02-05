@@ -3,6 +3,7 @@ import axios from 'axios';
 import { getCurrentDate } from './dateUtils';
 import { getCurrentTime } from './timeUtils';
 import { getGeoLocation } from './geoLocation';
+import TMPComponent from './category/component/TMPComponent';
 
 function Weather() {
     const [responseData, setResponseData] = useState(null); // 요청 결과
@@ -52,7 +53,7 @@ function Weather() {
 
     return (
       <div>
-          <pre>{JSON.stringify(responseData, null, 2)}</pre>
+        <TMPComponent responseData={responseData} />
       </div>
     );
 }
