@@ -1,6 +1,13 @@
 import React from 'react';
 import { filterDataByCategory } from '../DataUtils';
+import styled from 'styled-components';
 
+const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+// 적설량
 function SNOComponent({ responseData }) {
   const snoData = filterDataByCategory(responseData, 'SNO');
 
@@ -16,18 +23,13 @@ function SNOComponent({ responseData }) {
   };
 
   return (
-    <div>
-      <table>
-        <tbody>
-          <tr>
-            {snoData.map((item, index) => (
-              <td key={index}>{getSnoConditionText(item.fcstValue)}</td>
-            ))}
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  );
+    <FlexContainer>
+        {snoData.map((item, index) => (
+            <div key={index}>{`${getSnoConditionText(item.fcstValue)}`}</div>
+        ))}
+    </FlexContainer>
+    
+)
 }
 
 export default SNOComponent;

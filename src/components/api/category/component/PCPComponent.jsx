@@ -1,5 +1,11 @@
 import React from 'react'
 import { filterDataByCategory } from '../DataUtils';
+import styled from 'styled-components';
+
+const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 // 1시간 강수량 
 /*
@@ -26,19 +32,14 @@ function PCPComponent({responseData}) {
         }
     };
 
-  return (
-    <div>
-        <table>
-            <tbody>
-            <tr>
-                {pcpData.map((item, index) => (
-                <td key={index}>{`${getPcpConditionText(item.fcstValue)}`}</td>
-                ))}
-            </tr>
-            </tbody>
-        </table>
-    </div>
-  )
+    return (
+        <FlexContainer>
+            {pcpData.map((item, index) => (
+                <div key={index}>{`${getPcpConditionText(item.fcstValue)}`}</div>
+            ))}
+        </FlexContainer>
+        
+    )
 }
 
 export default PCPComponent

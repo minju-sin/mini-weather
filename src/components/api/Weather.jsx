@@ -10,26 +10,7 @@ import PHYComponent from './category/component/PTYComponent';
 import PCPComponent from './category/component/PCPComponent';
 import SNOComponent from './category/component/SNOComponent';
 
-const WeatherTable = styled.table`
-  width: 100%;
-  border-collapse: collapse;
-`;
 
-const TableHeader = styled.th`
-  background-color: #f2f2f2;
-`;
-
-const TableCell = styled.td`
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center;
-`;
-
-const WeatherTableRow = styled.tr`
-  &:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-`;
 
 function Weather() {
     const [responseData, setResponseData] = useState(null); // 요청 결과
@@ -78,30 +59,14 @@ function Weather() {
     if(!responseData) return null;
 
     return (
-      <WeatherTable>
-      <tbody>
-        <WeatherTableRow>
-          <TableHeader>기온(℃)</TableHeader>
-          <TMPComponent responseData={responseData} />
-        </WeatherTableRow>
-        <WeatherTableRow>
-          <TableHeader>하늘 상태</TableHeader>
-          <SKYComponent responseData={responseData} />
-        </WeatherTableRow>
-        <WeatherTableRow>
-          <TableHeader>강수 형태</TableHeader>
-          <PHYComponent responseData={responseData} />
-        </WeatherTableRow>
-        <WeatherTableRow>
-          <TableHeader>강수량</TableHeader>
-          <PCPComponent responseData={responseData} />
-        </WeatherTableRow>
-        <WeatherTableRow>
-          <TableHeader>적설량</TableHeader>
-          <SNOComponent responseData={responseData} />
-        </WeatherTableRow>
-      </tbody>
-    </WeatherTable>
+      <div>
+        <TMPComponent responseData={responseData} />
+        <SKYComponent responseData={responseData} />
+        <PHYComponent responseData={responseData} />
+        <PCPComponent responseData={responseData} />
+        <SNOComponent responseData={responseData} />
+      </div>
+      
     );
 }
 

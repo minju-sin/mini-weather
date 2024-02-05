@@ -1,6 +1,11 @@
 import React from 'react';
 import { filterDataByCategory } from '../DataUtils';
+import styled from 'styled-components';
 
+const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 // 하늘상태 
 /*
   맑음 : 1 
@@ -24,18 +29,13 @@ function SKYComponent({responseData}) {
       }
     };
 
-  return (
-    <div>
-      <table>
-        <tbody>
-          <tr>
-            {skyData.map((item, index) => (
-              <td key={index}>{`${getSkyConditionText(item.fcstValue)}`}</td>
-            ))}
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    return (
+      <FlexContainer>
+          {skyData.map((item, index) => (
+              <div key={index}>{`${getSkyConditionText(item.fcstValue)}`}</div>
+          ))}
+      </FlexContainer>
+      
   )
 }
 

@@ -1,22 +1,22 @@
 import React from 'react';
 import { filterDataByCategory } from '../DataUtils';
+import styled from 'styled-components';
+
+const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 // 1시간기온 
 function TMPComponent({responseData}) {
     const tmpData = filterDataByCategory(responseData, 'TMP');
 
   return (
-    <div>
-      <table>
-        <tbody>
-          <tr>
-            {tmpData.map((item, index) => (
-              <td key={index}>{item.fcstValue}℃</td>
-            ))}
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <FlexContainer>
+        {tmpData.map((item, index) => (
+            <div key={index}>{item.fcstValue}℃</div>
+        ))}
+    </FlexContainer>
     
   )
 }

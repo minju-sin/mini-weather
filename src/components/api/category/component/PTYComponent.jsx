@@ -1,12 +1,18 @@
 import React from 'react'
 import { filterDataByCategory } from '../DataUtils';
+import styled from 'styled-components';
+
+const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 // 강수형태
 /*
     없음 : 0    비 : 1     비/눈 : 2
     눈 : 3      소나기 : 4
 */
-function PHYComponent({responseData}) {
+function PTYComponent({responseData}) {
     const ptyData = filterDataByCategory(responseData, 'PTY');
 
     const getPhyConditionText = (code) => {
@@ -26,19 +32,14 @@ function PHYComponent({responseData}) {
         }
     };
 
-  return (
-    <div>
-        <table>
-            <tbody>
-            <tr>
-                {ptyData.map((item, index) => (
-                <td key={index}>{`${getPhyConditionText(item.fcstValue)}`}</td>
-                ))}
-            </tr>
-            </tbody>
-        </table>
-    </div>
-  )
+    return (
+        <FlexContainer>
+            {ptyData.map((item, index) => (
+                <div key={index}>{`${getPhyConditionText(item.fcstValue)}`}</div>
+            ))}
+        </FlexContainer>
+        
+    )
 }
 
-export default PHYComponent
+export default PTYComponent
