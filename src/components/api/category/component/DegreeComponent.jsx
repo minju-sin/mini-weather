@@ -1,6 +1,5 @@
 import React from 'react';
 import { filterDataByCategory } from '../DataUtils.js';
-import { FlexContainer, StyledDiv, StyledTitie } from '../style/TmpStyle.js';
 
 // 현재 기온 및 현재 시간을 표시하는 컴포넌트
 function DegreeComponent({ responseData }) {

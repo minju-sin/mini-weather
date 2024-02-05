@@ -11,6 +11,8 @@ import SNOComponent from './category/component/SNOComponent';
 import { CurrentLocation, Degree, Wrapper } from './category/style/TmpStyle';
 import TimeComponent from './category/component/TimeComponent';
 import DegreeComponenet from './category/component/DegreeComponent';
+import TMNComponent from './category/component/TMNComponent';
+import TMXComponent from './category/component/TMXComponent';
 
 
 
@@ -66,6 +68,9 @@ function Weather() {
         <Degree>
           <DegreeComponenet responseData={responseData} />
         </Degree>
+
+        <p>최저기온 <TMNComponent responseData={responseData} /></p>
+        <p>최고기온 <TMXComponent responseData={responseData} /></p>
         <Wrapper>
           <TimeComponent responseData={responseData} />
           <TMPComponent responseData={responseData} />
