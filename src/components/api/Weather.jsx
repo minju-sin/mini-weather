@@ -4,15 +4,16 @@ import { getCurrentDate } from './dateUtils';
 import { getCurrentTime } from './timeUtils';
 import { getGeoLocation } from './geoLocation';
 import TMPComponent from './category/component/TMPComponent';
-import SKYComponent from './category/component/SKYComponent';
 import PHYComponent from './category/component/PTYComponent';
 import PCPComponent from './category/component/PCPComponent';
-import SNOComponent from './category/component/SNOComponent';
-import { CurrentLocation, Degree, TMNX, Wrapper } from './category/style/TmpStyle';
+import WSDComponent from './category/component/WSDComponent';
+import { CurrentLocation, Degree, TMNX, Wrapper, StyledTitie } from './category/style/TmpStyle';
 import TimeComponent from './category/component/TimeComponent';
 import DegreeComponenet from './category/component/DegreeComponent';
 import TMNComponent from './category/component/TMNComponent';
 import TMXComponent from './category/component/TMXComponent';
+import POPComponent from './category/component/POPComponent';
+import REHComponent from './category/component/REHComponent';
 
 
 
@@ -75,13 +76,25 @@ function Weather() {
           <TMXComponent responseData={responseData} />
         </TMNX>
 
+
+        <div>
+          <StyledTitie>오늘</StyledTitie>
+          <StyledTitie>강수상태</StyledTitie>
+          <StyledTitie>기온</StyledTitie>
+          <StyledTitie>강수확률(%)</StyledTitie>
+          <StyledTitie>강수량(mm)</StyledTitie>
+          <StyledTitie>바람(m/s)</StyledTitie>
+          <StyledTitie>습도(%)</StyledTitie>
+        </div>
+
         <Wrapper>
           <TimeComponent responseData={responseData} />
-          <TMPComponent responseData={responseData} />
-          <SKYComponent responseData={responseData} />
           <PHYComponent responseData={responseData} />
+          <TMPComponent responseData={responseData} />
+          <POPComponent responseData={responseData} />
           <PCPComponent responseData={responseData} />
-          <SNOComponent responseData={responseData} />
+          <WSDComponent responseData={responseData} />
+          <REHComponent responseData={responseData} />
         </Wrapper>
       </div>
     );

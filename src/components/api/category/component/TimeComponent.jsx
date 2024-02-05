@@ -1,6 +1,6 @@
 import React from 'react';
 import { filterDataByCategory } from '../DataUtils';
-import {FlexContainer, StyledDiv, StyledTitie} from '../style/TmpStyle.js';
+import {FlexContainer, StyledDiv} from '../style/TmpStyle.js';
 
 
 // 시간
@@ -21,9 +21,6 @@ function TimeComponent({responseData}) {
 
   return (
     <FlexContainer>
-      <StyledTitie>
-        시간
-      </StyledTitie>
         {timeData.map((item, index) => (
             <StyledDiv key={index}>{`${getTimeConditionText(item.fcstTime)}시`}</StyledDiv>
         ))}

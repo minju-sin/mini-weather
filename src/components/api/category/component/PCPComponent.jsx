@@ -1,6 +1,6 @@
 import React from 'react'
 import { filterDataByCategory } from '../DataUtils';
-import {FlexContainer, StyledDiv, StyledTitie} from '../style/TmpStyle.js';
+import {FlexContainer, StyledDiv} from '../style/TmpStyle.js';
 
 
 // 1시간 강수량 
@@ -17,6 +17,8 @@ function PCPComponent({responseData}) {
 
     const getPcpConditionText = (code) => {
         switch(code){
+            case '강수없음':
+                return '0';
             case (code < 1.0):
                 return '1.0mm 미만';
             case (30.0 <= code && code < 50.0):
@@ -30,7 +32,7 @@ function PCPComponent({responseData}) {
 
     return (
         <FlexContainer>
-            <StyledTitie>강수량</StyledTitie>
+            
             {pcpData.map((item, index) => (
                 <StyledDiv key={index}>{`${getPcpConditionText(item.fcstValue)}`}</StyledDiv>
             ))}
