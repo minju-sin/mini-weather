@@ -29,7 +29,6 @@ function SKYComponent({responseData}) {
       <table>
         <tbody>
           <tr>
-            <td>하늘 상태</td>
             {skyData.map((item, index) => (
               <td key={index}>{`${getSkyConditionText(item.fcstValue)}`}</td>
             ))}

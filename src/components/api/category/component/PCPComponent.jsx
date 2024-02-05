@@ -31,7 +31,6 @@ function PCPComponent({responseData}) {
         <table>
             <tbody>
             <tr>
-                <td>강수량</td>
                 {pcpData.map((item, index) => (
                 <td key={index}>{`${getPcpConditionText(item.fcstValue)}`}</td>
                 ))}

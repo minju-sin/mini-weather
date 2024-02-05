@@ -31,7 +31,6 @@ function PHYComponent({responseData}) {
         <table>
             <tbody>
             <tr>
-                <td>강수형태</td>
                 {ptyData.map((item, index) => (
                 <td key={index}>{`${getPhyConditionText(item.fcstValue)}`}</td>
                 ))}

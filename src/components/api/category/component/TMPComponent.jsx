@@ -10,7 +10,6 @@ function TMPComponent({responseData}) {
       <table>
         <tbody>
           <tr>
-            <td>기온(℃)</td>
             {tmpData.map((item, index) => (
               <td key={index}>{item.fcstValue}℃</td>
             ))}

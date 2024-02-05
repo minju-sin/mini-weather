@@ -20,7 +20,6 @@ function SNOComponent({ responseData }) {
       <table>
         <tbody>
           <tr>
-            <td>산적설</td>
             {snoData.map((item, index) => (
               <td key={index}>{getSnoConditionText(item.fcstValue)}</td>
             ))}
