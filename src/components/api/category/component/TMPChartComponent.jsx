@@ -10,7 +10,7 @@ function TMPChartComponent({ responseData }) {
 
     return (
         <div>
-            <h3>온도 변화</h3>
+            <h3>12시간 온도 변화</h3>
             <LineChart labels={labels} data={data} label="Temperature" /> {/* 라인 차트 생성 */}
         </div>
     );
