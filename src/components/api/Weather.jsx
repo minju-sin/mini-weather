@@ -7,13 +7,14 @@ import TMPComponent from './category/component/TMPComponent';
 import PHYComponent from './category/component/PTYComponent';
 import PCPComponent from './category/component/PCPComponent';
 import WSDComponent from './category/component/WSDComponent';
-import { CurrentLocation, Degree, TMNX, Wrapper, StyledTitie, FlexContainer, WeatherTitle, WeatherWrapper } from './category/style/TmpStyle';
+import { CurrentLocation, Degree, TMNX, Wrapper, WeatherTitle, WeatherWrapper } from './category/style/TmpStyle';
 import TimeComponent from './category/component/TimeComponent';
 import DegreeComponenet from './category/component/DegreeComponent';
 import TMNComponent from './category/component/TMNComponent';
 import TMXComponent from './category/component/TMXComponent';
 import POPComponent from './category/component/POPComponent';
 import REHComponent from './category/component/REHComponent';
+import PtyNowComponent from './category/component/PtyNowComponent';
 
 
 
@@ -67,6 +68,7 @@ function Weather() {
       <div>
         <CurrentLocation>현재 위치</CurrentLocation>
         <Degree>
+          <PtyNowComponent responseData={responseData} />
           <DegreeComponenet responseData={responseData} />
         </Degree>
 

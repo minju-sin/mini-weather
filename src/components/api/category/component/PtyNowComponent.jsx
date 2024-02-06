@@ -1,10 +1,28 @@
+// 현재 기상상태 이모지로 나타내기 
+
 import React from 'react';
 import { filterDataByCategory } from '../DataUtils.js';
 
-// 현재 기온 및 현재 시간을 표시하는 컴포넌트
-function DegreeComponent({ responseData }) {
+function PtyNowComponent({ responseData }) {
   // 'TMP' 카테고리에 대한 데이터 필터링
-  const tmpData = filterDataByCategory(responseData, 'TMP');
+  const PtyNowData = filterDataByCategory(responseData, 'PTY');
+
+  const getPhyConditionText = (code) => {
+    switch(code){
+        case '0':
+            return '☀️';
+        case '1':
+            return '🌧️';
+        case '2':
+            return '🌧️/❄️';
+        case '3':
+            return '❄️';
+        case '4':
+            return '🌦️';
+        default:
+            return '알수없음';
+    }
+ };
 
   const currentTime = new Date();
   const hours = String(currentTime.getHours()).padStart(2, '0');  // 현재 시간의 시 부분을 가져옴
@@ -22,15 +40,15 @@ function DegreeComponent({ responseData }) {
   };
 
   // 현재 시간과 가장 가까운 데이터 찾기
-  const closestTimeData = tmpData.reduce((prev, current) =>
+  const closestTimeData = PtyNowData.reduce((prev, current) =>
     Math.abs(getTimeConditionText(current.fcstTime) - hours) < Math.abs(getTimeConditionText(prev.fcstTime) - hours) ? current : prev
   );
 
   return (
     <div>
-      <p>{`${closestTimeData.fcstValue}°`}</p>
+      <p>{`${getPhyConditionText(closestTimeData.fcstValue)}`}</p>
     </div>
   );
 }
 
-export default DegreeComponent;
+export default PtyNowComponent;

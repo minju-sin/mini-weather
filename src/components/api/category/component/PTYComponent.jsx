@@ -3,7 +3,6 @@ import { filterDataByCategory } from '../DataUtils';
 import {FlexContainer, StyledSpan} from '../style/TmpStyle.js';
 
 
-
 // 강수형태
 /*
     없음 : 0    비 : 1     비/눈 : 2
