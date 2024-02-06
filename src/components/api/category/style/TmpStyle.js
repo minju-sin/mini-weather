@@ -8,7 +8,7 @@ export const FlexContainer = styled.div`
 `;
 
 // 기온 표 
-export const StyledDiv = styled.div`
+export const StyledSpan = styled.span`
   flex: 1;
   min-width: 70px; 
   text-align: center;

@@ -1,6 +1,6 @@
 import React from 'react'
 import { filterDataByCategory } from '../DataUtils';
-import {FlexContainer, StyledDiv} from '../style/TmpStyle.js';
+import {FlexContainer, StyledSpan} from '../style/TmpStyle.js';
 
 
 // 1시간 강수량 
@@ -34,7 +34,7 @@ function PCPComponent({responseData}) {
         <FlexContainer>
             
             {pcpData.map((item, index) => (
-                <StyledDiv key={index}>{`${getPcpConditionText(item.fcstValue)}`}</StyledDiv>
+                <StyledSpan key={index}>{`${getPcpConditionText(item.fcstValue)}`}</StyledSpan>
             ))}
         </FlexContainer>
         

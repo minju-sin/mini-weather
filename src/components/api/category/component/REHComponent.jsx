@@ -1,6 +1,6 @@
 import React from 'react'
 import { filterDataByCategory } from '../DataUtils.js';
-import {FlexContainer, StyledDiv} from '../style/TmpStyle.js';
+import {FlexContainer, StyledSpan} from '../style/TmpStyle.js';
 
 
 
@@ -12,7 +12,7 @@ function REHComponent({responseData}) {
     return (
         <FlexContainer>
             {rehData.map((item, index) => (
-                <StyledDiv key={index}>{`${item.fcstValue}`}</StyledDiv>
+                <StyledSpan key={index}>{`${item.fcstValue}`}</StyledSpan>
             ))}
         </FlexContainer>
         
