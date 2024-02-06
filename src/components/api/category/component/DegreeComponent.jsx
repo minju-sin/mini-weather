@@ -1,6 +1,6 @@
 import React from 'react';
 import { filterDataByCategory } from '../DataUtils.js';
-
+import { Now } from './../style/TmpStyle';
 // 현재 기온 및 현재 시간을 표시하는 컴포넌트
 function DegreeComponent({ responseData }) {
   // 'TMP' 카테고리에 대한 데이터 필터링
@@ -28,7 +28,7 @@ function DegreeComponent({ responseData }) {
 
   return (
     <div>
-      <p>{`${closestTimeData.fcstValue}°`}</p>
+      <Now>{`${closestTimeData.fcstValue}°`}</Now>
     </div>
   );
 }

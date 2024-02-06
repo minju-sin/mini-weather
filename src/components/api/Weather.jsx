@@ -67,6 +67,7 @@ function Weather() {
     return (
       <div>
         <CurrentLocation>현재 위치</CurrentLocation>
+
         <Degree>
           <PtyNowComponent responseData={responseData} />
           <DegreeComponenet responseData={responseData} />

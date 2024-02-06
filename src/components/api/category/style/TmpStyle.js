@@ -44,16 +44,12 @@ export const CurrentLocation = styled.p`
 `;
 
 // 현재 온도 
-export const Degree = styled.p`
-  color: var(--systemGrey-900, #212121);
-  text-align: center;
-  font-family: Inter;
+export const Degree = styled.div`
   font-size: 56px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: 0.2px;
-  text-transform: capitalize;
+  font-weight: bold;
+  display:flex;
+  flex-direction: row;
+  padding-left: 880px;
 `;
 
 // 최저.최고기온 
@@ -85,4 +81,8 @@ export const WeatherWrapper = styled.div`
 
 export const MinMaxTmp = styled.span`
   padding : 5px;
+`;
+
+export const Now = styled.p`
+  padding : 2px;
 `;

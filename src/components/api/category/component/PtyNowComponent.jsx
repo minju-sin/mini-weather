@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { filterDataByCategory } from '../DataUtils.js';
+import { Now } from './../style/TmpStyle';
 
 function PtyNowComponent({ responseData }) {
   // 'TMP' 카테고리에 대한 데이터 필터링
@@ -46,7 +47,7 @@ function PtyNowComponent({ responseData }) {
 
   return (
     <div>
-      <p>{`${getPhyConditionText(closestTimeData.fcstValue)}`}</p>
+      <Now>{`${getPhyConditionText(closestTimeData.fcstValue)}`}</Now>
     </div>
   );
 }
