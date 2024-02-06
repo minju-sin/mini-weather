@@ -18,6 +18,7 @@ import PtyNowComponent from './category/component/PtyNowComponent';
 import TMPChartComponent from './category/component/TMPChartComponent';
 import VECComponent from './category/component/VECComponent';
 import Loading from '../ui/Loading';
+import Error from '../ui/Error';
 
 
 
