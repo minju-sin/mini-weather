@@ -10,7 +10,7 @@ function REHComponent({responseData}) {
 
     
     return (
-        <FlexContainer>
+        <FlexContainer style={{color: "skyblue"}}>
             {rehData.map((item, index) => (
                 <StyledSpan key={index}>{`${item.fcstValue}`}</StyledSpan>
             ))}

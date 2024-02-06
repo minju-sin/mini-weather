@@ -65,7 +65,7 @@ export const TMNX = styled.div`
 export const WeatherTitle = styled.div`
   width: 100px;
   height: 300px;
-  text-align: left;
+  text-align: right;
   font-size: 15px;
   padding: 1px;
 `;

@@ -16,6 +16,7 @@ import POPComponent from './category/component/POPComponent';
 import REHComponent from './category/component/REHComponent';
 import PtyNowComponent from './category/component/PtyNowComponent';
 import TMPChartComponent from './category/component/TMPChartComponent';
+import VECComponent from './category/component/VECComponent';
 
 
 
@@ -86,6 +87,7 @@ function Weather() {
             <p>기온</p>
             <p>강수확률(%)</p>
             <p>강수량(mm)</p>
+            <p>풍향</p>
             <p>바람(m/s)</p>
             <p>습도(%)</p>
           </WeatherTitle>
@@ -96,6 +98,7 @@ function Weather() {
             <TMPComponent responseData={responseData} />
             <POPComponent responseData={responseData} />
             <PCPComponent responseData={responseData} />
+            <VECComponent responseData={responseData} />
             <WSDComponent responseData={responseData} />
             <REHComponent responseData={responseData} />
           </Wrapper>

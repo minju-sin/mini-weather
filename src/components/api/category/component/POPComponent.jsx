@@ -8,7 +8,7 @@ function POPComponent({responseData}) {
     const popData = filterDataByCategory(responseData, 'POP');
 
     return (
-      <FlexContainer>
+        <FlexContainer style={{color: "skyblue"}}>
           {popData.map((item, index) => (
               <StyledSpan key={index}>{`${item.fcstValue}`}</StyledSpan>
           ))}

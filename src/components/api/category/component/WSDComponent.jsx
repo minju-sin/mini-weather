@@ -9,7 +9,7 @@ function WSDComponent({ responseData }) {
 
 
   return (
-    <FlexContainer>
+    <FlexContainer style={{color: "skyblue"}}>
         {wsdData.map((item, index) => (
             <StyledSpan key={index}>{`${item.fcstValue}`}</StyledSpan>
         ))}
