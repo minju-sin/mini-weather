@@ -64,7 +64,7 @@ function Weather() {
     }, []);
     
     if(loading) return <Loading/>
-    if(error) return <div>Error...</div>
+    if(error) return <Error/>
     if(!responseData) return null;
 
     return (

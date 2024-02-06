@@ -1,0 +1,23 @@
+.error-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeInOut 5s forwards; /* 5초 동안 애니메이션을 실행합니다. */
+  }
+  
+  .error-message {
+    color: white;
+    font-size: 18px;
+  }
+  
+  @keyframes fadeInOut {
+    0% { opacity: 0; } /* 처음에 투명도를 0으로 설정하여 숨깁니다. */
+    10% { opacity: 1; } /* 애니메이션이 시작될 때 투명도를 1로 설정하여 나타냅니다. */
+    90% { opacity: 1; } /* 애니메이션이 끝날 때까지 투명도를 유지합니다. */
+    100% { opacity: 0; } /* 마지막에 투명도를 0으로 설정하여 숨깁니다. */
+  }
+  
