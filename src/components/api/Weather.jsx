@@ -80,28 +80,29 @@ function Weather() {
         </TMNX>
 
         <WeatherWrapper>
-        <WeatherTitle>
-                    <p>오늘</p>
-                    <p>강수상태</p>
-                    <p>기온</p>
-                    <p>강수확률(%)</p>
-                    <p>강수량(mm)</p>
-                    <p>바람(m/s)</p>
-                    <p>습도(%)</p>
-                  </WeatherTitle>
+          <WeatherTitle>
+            <p>오늘</p>
+            <p>강수상태</p>
+            <p>기온</p>
+            <p>강수확률(%)</p>
+            <p>강수량(mm)</p>
+            <p>바람(m/s)</p>
+            <p>습도(%)</p>
+          </WeatherTitle>
 
-                  <Wrapper>
-                    <TimeComponent responseData={responseData} />
-                    <PHYComponent responseData={responseData} />
-                    <TMPComponent responseData={responseData} />
-                    <POPComponent responseData={responseData} />
-                    <PCPComponent responseData={responseData} />
-                    <WSDComponent responseData={responseData} />
-                    <REHComponent responseData={responseData} />
-                </Wrapper>
-                <TMPChartComponent responseData={responseData} />
+          <Wrapper>
+            <TimeComponent responseData={responseData} />
+            <PHYComponent responseData={responseData} />
+            <TMPComponent responseData={responseData} />
+            <POPComponent responseData={responseData} />
+            <PCPComponent responseData={responseData} />
+            <WSDComponent responseData={responseData} />
+            <REHComponent responseData={responseData} />
+          </Wrapper>
+
+          {/* 온도 변화 */}
+          <TMPChartComponent responseData={responseData} />
         </WeatherWrapper>
-          
       </div>
     );
 }
