@@ -1,5 +1,6 @@
 import React from 'react';
 import { filterDataByCategory } from '../DataUtils.js';
+import { MinMaxTmp } from '../style/TmpStyle.js';
 
 // 최고기온
 function TMXComponent({responseData}) {
@@ -11,7 +12,7 @@ function TMXComponent({responseData}) {
     return (
       <div>
         {/* 가장 큰 최고 기온만을 표시 */}
-          <p>{maxTmnData.fcstValue}℃</p>
+          <MinMaxTmp>최고:{maxTmnData.fcstValue}°</MinMaxTmp>
       </div>
       
     )

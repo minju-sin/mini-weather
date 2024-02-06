@@ -7,7 +7,7 @@ import TMPComponent from './category/component/TMPComponent';
 import PHYComponent from './category/component/PTYComponent';
 import PCPComponent from './category/component/PCPComponent';
 import WSDComponent from './category/component/WSDComponent';
-import { CurrentLocation, Degree, TMNX, Wrapper, StyledTitie, FlexContainer } from './category/style/TmpStyle';
+import { CurrentLocation, Degree, TMNX, Wrapper, StyledTitie, FlexContainer, WeatherTitle, WeatherWrapper } from './category/style/TmpStyle';
 import TimeComponent from './category/component/TimeComponent';
 import DegreeComponenet from './category/component/DegreeComponent';
 import TMNComponent from './category/component/TMNComponent';
@@ -71,37 +71,32 @@ function Weather() {
         </Degree>
 
         <TMNX>
-          최저/최고
-          <TMNComponent responseData={responseData} />
           <TMXComponent responseData={responseData} />
+          <TMNComponent responseData={responseData} />
         </TMNX>
 
+        <WeatherWrapper>
+        <WeatherTitle>
+                    <p>오늘</p>
+                    <p>강수상태</p>
+                    <p>기온</p>
+                    <p>강수확률(%)</p>
+                    <p>강수량(mm)</p>
+                    <p>바람(m/s)</p>
+                    <p>습도(%)</p>
+                  </WeatherTitle>
 
-        <Wrapper>
+                  <Wrapper>
+                    <TimeComponent responseData={responseData} />
+                    <PHYComponent responseData={responseData} />
+                    <TMPComponent responseData={responseData} />
+                    <POPComponent responseData={responseData} />
+                    <PCPComponent responseData={responseData} />
+                    <WSDComponent responseData={responseData} />
+                    <REHComponent responseData={responseData} />
+                </Wrapper>
+        </WeatherWrapper>
           
-        </Wrapper>
-
-        <div>
-          <div>
-            <StyledTitie>오늘</StyledTitie>
-            <StyledTitie>강수상태</StyledTitie>
-            <StyledTitie>기온</StyledTitie>
-            <StyledTitie>강수확률(%)</StyledTitie>
-            <StyledTitie>강수량(mm)</StyledTitie>
-            <StyledTitie>바람(m/s)</StyledTitie>
-            <StyledTitie>습도(%)</StyledTitie>
-          </div>
-
-          <Wrapper>
-            <TimeComponent responseData={responseData} />
-            <PHYComponent responseData={responseData} />
-            <TMPComponent responseData={responseData} />
-            <POPComponent responseData={responseData} />
-            <PCPComponent responseData={responseData} />
-            <WSDComponent responseData={responseData} />
-            <REHComponent responseData={responseData} />
-        </Wrapper>
-        </div>
       </div>
     );
 }

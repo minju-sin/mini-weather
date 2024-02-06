@@ -1,5 +1,6 @@
 import React from 'react';
 import { filterDataByCategory } from '../DataUtils.js';
+import { MinMaxTmp } from '../style/TmpStyle.js';
 
 // 최저기온 컴포넌트
 function TMNComponent({ responseData }) {
@@ -12,7 +13,7 @@ function TMNComponent({ responseData }) {
   return (
     <div>
       {/* 가장 작은 최저 기온만을 표시 */}
-      <p>{minTmnData.fcstValue}℃</p>
+      <MinMaxTmp>최저:{minTmnData.fcstValue}°</MinMaxTmp>
     </div>
   );
 }

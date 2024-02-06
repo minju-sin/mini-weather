@@ -10,7 +10,7 @@ function TMPComponent({responseData}) {
   return (
     <FlexContainer>
         {tmpData.map((item, index) => (
-            <StyledDiv key={index}>{item.fcstValue}℃</StyledDiv>
+            <StyledDiv key={index}>{item.fcstValue}°</StyledDiv>
         ))}
     </FlexContainer>
     
