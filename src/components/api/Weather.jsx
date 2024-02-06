@@ -15,6 +15,7 @@ import TMXComponent from './category/component/TMXComponent';
 import POPComponent from './category/component/POPComponent';
 import REHComponent from './category/component/REHComponent';
 import PtyNowComponent from './category/component/PtyNowComponent';
+import TMPChartComponent from './category/component/TMPChartComponent';
 
 
 
@@ -98,6 +99,7 @@ function Weather() {
                     <WSDComponent responseData={responseData} />
                     <REHComponent responseData={responseData} />
                 </Wrapper>
+                <TMPChartComponent responseData={responseData} />
         </WeatherWrapper>
           
       </div>
