@@ -31,16 +31,12 @@ export const Wrapper = styled.div`
 `;
 
 // 현재위치
-export const CurrentLocation = styled.p`
+export const CurrentLocation = styled.div`
   color: #757575;
-  text-align: center;
-  font-family: Inter;
   font-size: 30px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0.2px;
-  text-transform: capitalize; 
+  padding-left: 890px;
+  margin-top: 50px;
 `;
 
 // 현재 온도 
