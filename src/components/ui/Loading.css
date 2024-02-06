@@ -1,0 +1,40 @@
+.loading-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex; /* 부모 요소를 flex 컨테이너로 설정합니다. */
+    flex-direction: column; /* 요소들을 세로로 배치합니다. */
+    align-items: center; /* 요소들을 수직 방향으로 가운데로 정렬합니다. */
+    justify-content: center; /* 요소들을 수평 방향으로 가운데로 정렬합니다. */
+  }
+  
+  
+  .loading-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* 50%를 사용하여 사진을 원형으로 만듭니다. */
+    animation: fadeInOut 2s ease-in-out infinite;
+  }
+  
+  
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0; /* 처음에 투명도를 0으로 설정하여 로딩 이미지를 사라지게 합니다. */
+    }
+    50% {
+      opacity: 1; /* 중간에 투명도를 1로 설정하여 로딩 이미지를 나타나게 합니다. */
+    }
+    100% {
+      opacity: 0; /* 마지막에 다시 투명도를 0으로 설정하여 로딩 이미지를 사라지게 합니다. */
+    }
+  }
+
+  .loading-text {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px; /* 로딩 이미지와 텍스트 사이의 간격을 조정합니다. */
+    font-weight: bold;
+  }
+  
+  

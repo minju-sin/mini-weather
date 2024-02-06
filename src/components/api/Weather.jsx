@@ -17,6 +17,7 @@ import REHComponent from './category/component/REHComponent';
 import PtyNowComponent from './category/component/PtyNowComponent';
 import TMPChartComponent from './category/component/TMPChartComponent';
 import VECComponent from './category/component/VECComponent';
+import Loading from '../ui/Loading';
 
 
 
@@ -62,7 +63,7 @@ function Weather() {
       fetchData();
     }, []);
     
-    if(loading) return <div>Loading...</div>
+    if(loading) return <Loading/>
     if(error) return <div>Error...</div>
     if(!responseData) return null;
 
